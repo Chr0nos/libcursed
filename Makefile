@@ -1,6 +1,6 @@
 NAME=libcursed.a
 BUILD_DIR=./build
-SRCS=curses_confirm.c curses_window.c curses_info.c
+SRCS=curses_confirm.c curses_window.c curses_info.c curses_box.c
 OBJS=$(SRCS:%.c=$(BUILD_DIR)/%.o)
 CFLAGS=-Weverything -Werror -Wextra -Wall -Wpedantic -Ofast
 LIBFT_DIR=../libft
