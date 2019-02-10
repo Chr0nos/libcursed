@@ -3,7 +3,7 @@
 #define CORNER_TOP_RIGHT    'B'
 #define CORNER_BOT_LEFT     'C'
 #define CORNER_BOT_RIGHT    'D'
-#define CONFIRM_BORDER      '|'
+#define BOX_BORDER      '|'
 
 /*
 ** just draw an empty rectangle on the screen
@@ -36,7 +36,7 @@ void  curses_box(int x, int y, int w, int h)
     line--;
     while (line > y)
     {
-        mvprintw(line, x, "%c%-*s%c", CONFIRM_BORDER, w - 2, "", CONFIRM_BORDER);
+        mvprintw(line, x, "%c%-*s%c", BOX_BORDER, w - 2, "", BOX_BORDER);
         line--;
     }
 	attroff(pair);
