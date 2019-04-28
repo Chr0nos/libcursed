@@ -57,12 +57,12 @@ int                 curses_new_window(struct curses_window *win)
 
 	if (!win->object)
 		win->object = newwin(win->h, win->w, win->y, win->x);
-    CURSES_WINRET(win, ret, win->init);
+    CURSES_WINRET(win, ret, win->init)
     do
     {
         key = 0;
         curses_window_decorate(win);
-        CURSES_WINRET(win, ret, win->draw);
+        CURSES_WINRET(win, ret, win->draw)
         if (!win->draw)
             refresh();
         if (!(win->flags & WIN_NOINPUT))
@@ -86,7 +86,7 @@ int                 curses_new_window(struct curses_window *win)
     while (((key != 'q') || (win->flags & WIN_NOQ)) && (!(win->flags & WIN_QUIT)));
 	delwin(win->object);
     win->object = NULL;
-    CURSES_WINRET(win, ret, win->quit);
+    CURSES_WINRET(win, ret, win->quit)
     if ((win->parent) && (!(win->flags & NO_REFRESHPARENT)))
         curses_refresh_parents(win->parent);
     return (0);
